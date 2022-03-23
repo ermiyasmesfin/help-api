@@ -1,0 +1,142 @@
+### Tech sing up endpoint
+POST http://localhost:3001/v1/tech
+Content-Type: application/json
+
+{
+    "name": "Awlachew teshome",
+    "company": "Company name",
+    "address": "addis",
+    "phone": "041000000",
+    "email": "awlachew@gmail.com",
+    "password": "password"
+}
+### Tech sing in endpoint
+POST http://localhost:3001/v1/tech/login
+Content-Type: application/json 
+
+{
+    "email": "abebe@gmail.com",
+     "password": "password"   
+}
+
+### Get a tech profile endpoint
+GET  http://localhost:3001/v1/tech
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NTE5NTg2MCwiZXhwIjoxNjQ1MTk2NzYwfQ.GEgZD-k4JVEfw8p6GpIgHCy1aqWV8msLkdMgVpMpdms
+
+### Get a tech profile endpoint
+GET  http://localhost:3001/v1/tech/team
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUyNzIyODMsImV4cCI6MTY0NTI3MzE4M30.JHl4lW-I9n0u9WTa7dbbMtKuwWUURQIwsR4oMDQy9Q8
+
+
+###Token routers
+
+### Get refreshed token
+GET http://localhost:3001/v1/tokens/tech
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NDU3NDk1NSwiZXhwIjoxNjQ3MTY2OTU1fQ.E3lWnFC3K0NgVdkzXRO0LzRJW3i8NgjLN9Hmh7stPm0
+
+
+
+
+
+#### Password reset request endpoints
+POST http://localhost:3001/v1/tech/reset-password
+Content-Type: application/json
+
+{
+    "email": "abebe@gmail.com"
+}
+
+
+#### Update new password endpoint
+PATCH  http://localhost:3001/v1/tech/reset-password
+Content-Type: application/json 
+
+{
+    "email": "abebe@gmail.com",
+    "pin": "867621",
+    "newPassword": "password"
+}
+
+#### tech logout endpoint
+DELETE http://localhost:3001/v1/tech/logout
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NTIxMTQ2MSwiZXhwIjoxNjQ1MjEyMzYxfQ.u3ssluT0WpZByyGW77hirnDIy4Sr4Qd1vzUnmIAkjxA
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+### Team sing up endpoint
+POST http://localhost:3001/v1/team
+Content-Type: application/json
+
+{
+    "name": "kebede teshome",
+    "company": "Company name",
+    "address": "addis",
+    "phone": "041000000",
+    "email": "kebede@gmail.com",
+    "password": "secret222"
+}
+### Team sing in endpoint
+POST http://localhost:3001/v1/team/login
+Content-Type: application/json 
+
+{
+    "email": "kebede@gmail.com",
+     "password": "password"   
+}
+
+###Get all the tickets
+GET http://localhost:3001/v1/ticket/team
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUxOTU3NDUsImV4cCI6MTY0NTE5NjY0NX0.ckD0EMAIBZDWxsXFHI8dvXxZ47ypQlhDoDSBr4mCVIM
+
+
+### Get a team profile endpoint
+GET  http://localhost:3001/v1/team
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUyNjY5NjQsImV4cCI6MTY0NTI2Nzg2NH0.JuL1KYyfsXBxMw_QHvlbdp-7nQUpeMJl0P02sptLOvU
+
+
+###Token routers
+
+### Get refreshed token
+GET http://localhost:3001/v1/tokens/team
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDQ2NDEwMzMsImV4cCI6MTY0NzIzMzAzM30.sRfSFmFfkONuV1bHZvKHXWRhwNaqHnWaAuwo9JJLqBk
+
+
+
+
+
+#### Password reset request endpoints
+POST http://localhost:3001/v1/team/reset-password
+Content-Type: application/json
+
+{
+    "email": "kebede@gmail.com"
+}
+
+
+#### Update new password endpoint
+PATCH  http://localhost:3001/v1/team/reset-password
+Content-Type: application/json 
+
+{
+    "email": "kebede@gmail.com",
+    "pin": "345416",
+    "newPassword": "password"
+}
+
+#### team logout endpoint
+DELETE http://localhost:3001/v1/tech/team
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUyNjY5NjQsImV4cCI6MTY0NTI2Nzg2NH0.JuL1KYyfsXBxMw_QHvlbdp-7nQUpeMJl0P02sptLOvU
+ 

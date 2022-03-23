@@ -1,0 +1,127 @@
+### User sing up endpoint
+POST http://localhost:3001/v1/user
+Content-Type: application/json
+
+{
+    "name": "Ermiyas mesfin",
+    "company": "Company name",
+    "address": "addis",
+    "phone": "041000000",
+    "email": "ermias@gmail.com",
+    "password": "secret222"
+}
+### User sing in endpoint
+POST http://localhost:3001/v1/user/login
+Content-Type: application/json 
+
+{
+    "email": "ermias@gmail.com",
+     "password": "password1"   
+}
+
+### Get a user profile endpoint
+GET  http://localhost:3001/v1/user
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVybWlhc0BnbWFpbC5jb20iLCJpYXQiOjE2NDQ4MzAyODcsImV4cCI6MTY0NDgzMTE4N30.r-Hp7vdkGJhtlWQDNuroJ3r33gEB0Za3CJhSHxIcAR4
+
+
+###Token routers
+
+### Get refreshed token
+GET http://localhost:3001/v1/tokens
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVybWlhc0BnbWFpbC5jb20iLCJpYXQiOjE2NDQyMzIzOTYsImV4cCI6MTY0NjgyNDM5Nn0.zZBDwMezq86oWwX9hB1AznH0xATLjUB2jwz6HamiNTc
+
+
+
+
+
+#### Password reset request endpoints
+POST http://localhost:3001/v1/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "ermias@gmail.com"
+}
+
+
+#### Update new password endpoint
+PATCH  http://localhost:3001/v1/user/reset-password
+Content-Type: application/json 
+
+{
+    "email": "ermias@gmail.com",
+    "pin": "649398",
+    "newPassword": "password1"
+}
+
+#### user logout endpoint
+DELETE http://localhost:3001/v1/user/logout
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVybWlhc0BnbWFpbC5jb20iLCJpYXQiOjE2NDUyMTIxNDIsImV4cCI6MTY0NTIxMzA0Mn0.D-7jW0CCHMg2D5csOUikdIqYAT4S50qCeysxX2O1T3Y
+ 
+ 
+###Ticket apis
+
+ 
+### Open new ticket
+POST http://localhost:3001/v1/ticket
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NTE5MTcwOCwiZXhwIjoxNjQ1MTkyNjA4fQ.7qwWZOzc5zlbeZWtA4xE-iPO1gdmo-diQ3Bwq58X5ac
+Content-Type: application/json 
+
+{
+ "subject": "abebe",
+  "sender": "abebe",
+  "message": "1 Contact form not working. please fix it as soon as possible" 
+}
+
+###Get all the tickets
+GET http://localhost:3001/v1/ticket
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVybWlhc0BnbWFpbC5jb20iLCJpYXQiOjE2NDUyNzM0NDcsImV4cCI6MTY0NTI3NDM0N30.7yHYpxhcaFgUX6972YZqMyLn4hjd5YPg9ZkWTI7OcMA
+
+### Get single ticket
+GET http://localhost:3001/v1/ticket/620e3f7b9e601d659d3b6ee3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUxOTYwNDksImV4cCI6MTY0NTE5Njk0OX0.2wiSZQySst1cKif9Esa-TDA2S0k2IOfUYKmAVU91opI
+
+### Get single ticket for team
+GET http://localhost:3001/v1/ticket/team/620e3f7b9e601d659d3b6ee3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVybWlhc0BnbWFpbC5jb20iLCJpYXQiOjE2NDUyNzM0NDcsImV4cCI6MTY0NTI3NDM0N30.7yHYpxhcaFgUX6972YZqMyLn4hjd5YPg9ZkWTI7OcMA
+
+### Get single ticket for tech
+GET http://localhost:3001/v1/ticket/tech/620e3f7b9e601d659d3b6ee3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NTIwMDk3MCwiZXhwIjoxNjQ1MjAxODcwfQ.pAgeIFxzGpljIhqeavMTO-cB6TB6e97MTnZdUEgXrg4
+
+
+
+
+### Reply message to the ticket
+PUT http://localhost:3001/v1/ticket/620e3c02188023c80ace3412
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NTIwNzc2MywiZXhwIjoxNjQ1MjA4NjYzfQ.4PIxkzY2HLBIhXketp01duEp3pvGuGFLqFNsmiXAneA
+Content-Type: application/json 
+
+{ 
+    "message": "lets see", 
+    "sender": "Abebe" 
+}
+
+### Close the ticket
+PATCH http://localhost:3001/v1/ticket/close-ticket-tech/620e3c02188023c80ace3412
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZWJlQGdtYWlsLmNvbSIsImlhdCI6MTY0NTIwODk3NCwiZXhwIjoxNjQ1MjA5ODc0fQ.sXeKkaTIf6K3jF5-9ZEHQK3zTdeUVYNIhl-nPv8IA64
+
+### Delete the ticket
+DELETE  http://localhost:3001/v1/ticket/62037bb076bce7b7a7c41686
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVybWlhc0BnbWFpbC5jb20iLCJpYXQiOjE2NDQzOTU0MTUsImV4cCI6MTY0NDM5NjMxNX0.LI_blG_6kqBMmDsWrRMW0s09LiHO4Hqa3FuCUg3j5Cg
+
+
+
+### Reply message to the ticket
+PATCH  http://localhost:3001/v1/ticket/update/620fa29e89ed4c569cc58669
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUyNjE3MDAsImV4cCI6MTY0NTI2MjYwMH0.zDcNK69ymyjkmDN-0xFozeYpkB5f4lGqLIXNo1xTWy4
+Content-Type: application/json 
+
+{ 
+    "message": "62063843f337212c5ccff32e"
+}
+
+
+
+###Get all the tickets
+GET http://localhost:3001/v1/ticket/qwertyuiop
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlYmVkZUBnbWFpbC5jb20iLCJpYXQiOjE2NDUyMDYzOTAsImV4cCI6MTY0NTIwNzI5MH0.TD2GS6GJFDVAf4WPfuubJN7PfOxEIePUtrn-bFatFHs
